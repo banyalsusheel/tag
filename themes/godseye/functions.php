@@ -672,3 +672,23 @@ function special_nav_class($classes, $item){
      return $classes;
 }
 
+
+
+
+
+function bbloomer_redirect_checkout_add_cart( $url ) {
+	// $product_id = apply_filters( 'woocommerce_add_to_cart_product_id', absint( $_REQUEST['add-to-cart'] ) );
+	// if ( in_array( $product_id, array( 10) ) ) {
+	// 	$url = WC()->cart->get_checkout_url();
+	// }
+	$url = get_permalink( get_option( 'woocommerce_checkout_page_id' ) ); 
+	return $url;
+ }
+  
+ add_filter( 'woocommerce_add_to_cart_redirect', 'bbloomer_redirect_checkout_add_cart' );
+
+add_filter('woocommerce_product_single_add_to_cart_text', 'woo_custom_cart_button_text');
+ 
+function woo_custom_cart_button_text() {
+	return __('Buy Now', 'woocommerce');
+}

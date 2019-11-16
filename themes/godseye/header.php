@@ -47,12 +47,12 @@
 								<?php $defaults = array('container' => 'ul', 'menu_class' => 'd-flex flex-column flex-lg-row justify-content-lg-end align-content-center', 'menu_id' => 'top-menu', 'theme_location' => 'top');
 									wp_nav_menu($defaults);
 								?>
-								<a href="#" class="btn gradient-bg justify-content-lg-end btn-hide" title="Buy Fastag">Buy Fastag</a>
+								<a href="<?php echo get_permalink( 10 )?>" class="btn gradient-bg justify-content-lg-end btn-hide" title="Buy Fastag">Buy Fastag</a>
 							</nav>
 						<?php endif;?>
 
                         
-						<a href="#" class="btn gradient-bg justify-content-lg-end d-lg-none btn-absolute" title="Buy Fastag">Buy Fastag</a>
+						<a href="<?php echo get_permalink( 10 )?>" class="btn gradient-bg justify-content-lg-end d-lg-none btn-absolute" title="Buy Fastag">Buy Fastag</a>
                         <div class="hamburger-menu d-lg-none">
                             <span></span>
                             <span></span>

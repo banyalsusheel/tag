@@ -28,7 +28,7 @@
                                 </div><!-- .entry-content -->
 
                                 <footer class="entry-footer d-flex flex-wrap align-items-center mt-5">
-                                    <a href="<?php echo esc_url(home_url('/')); ?>cart/?add-to-cart=10" class="btn gradient-bg mr-2">Buy Fastag</a>
+                                    <a href="<?php echo get_permalink( 10 )?>" class="btn gradient-bg mr-2">Buy Fastag</a>
                                     <a href="#" class="btn orange-border">Read More</a>
                                 </footer><!-- .entry-footer -->
                             </div><!-- .col -->
@@ -54,8 +54,8 @@
                                 </div><!-- .entry-content -->
 
                                 <footer class="entry-footer d-flex flex-wrap align-items-center mt-5">
-                                    <a href="<?php echo esc_url(home_url('/')); ?>cart/?add-to-cart=10" class="btn gradient-bg mr-2">Buy Fastag</a>
-                                    <a href="#" class="btn orange-border">Read More</a>
+                                    <a href="<?php echo get_permalink( 10 )?>" class="btn gradient-bg mr-2">Buy Fastag</a>
+                                    <a href="<?php echo get_permalink( 10 )?>" class="btn orange-border">Read More</a>
                                 </footer><!-- .entry-footer -->
                             </div><!-- .col -->
                         </div><!-- .row -->
@@ -80,7 +80,7 @@
                                 </div><!-- .entry-content -->
 
                                 <footer class="entry-footer d-flex flex-wrap align-items-center mt-5">
-                                    <a href="<?php echo esc_url(home_url('/')); ?>cart/?add-to-cart=10" class="btn gradient-bg mr-2">Buy Fastag</a>
+                                    <a href="<?php echo get_permalink( 10 )?>" class="btn gradient-bg mr-2">Buy Fastag</a>
                                     <a href="#" class="btn orange-border">Read More</a>
                                 </footer><!-- .entry-footer -->
                             </div><!-- .col -->
