@@ -39,7 +39,7 @@
                 <div class="row">
                     <div class="col-12 d-flex flex-wrap justify-content-between align-items-center">
                         <div class="site-branding d-flex align-items-center">
-                           <a class="d-block" href="<?php echo esc_url(home_url('/')); ?>" rel="home"><img class="d-block" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/logo.png" alt="logo"></a>
+                           <a class="d-block" href="<?php echo esc_url(home_url('/')); ?>" rel="home"><img class="d-block" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/logo-god.png" alt="logo" width=200 height=44></a>
                         </div><!-- .site-branding -->
 
 						<?php if (has_nav_menu('top')): ?>
