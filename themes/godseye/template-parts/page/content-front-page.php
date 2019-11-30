@@ -20,11 +20,11 @@
                             <div class="col-12 col-lg-8 d-flex flex-column justify-content-center align-items-start">
                                 <header class="entry-header">
                                     <h1>Fastag</h1>
-                                    <h4>Registration and Recharge Photos...</h4>
+                                    <h4>Registration and Recharge easier...</h4>
                                 </header><!-- .entry-header -->
 
                                 <div class="entry-content mt-4">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempus vestibulum mauris quis aliquam. Integer accumsan sodales odio, id tempus ullamcorper</p>
+                                    <p>Registration and Recharge easier</p>
                                 </div><!-- .entry-content -->
 
                                 <footer class="entry-footer d-flex flex-wrap align-items-center mt-5">
@@ -50,7 +50,7 @@
                                 </header><!-- .entry-header -->
 
                                 <div class="entry-content mt-4">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempus vestibulum mauris quis aliquam. Integer accumsan sodales odio, id tempus ullamcorper</p>
+                                    <p>Pay Highway Toll Online</p>
                                 </div><!-- .entry-content -->
 
                                 <footer class="entry-footer d-flex flex-wrap align-items-center mt-5">
@@ -76,7 +76,7 @@
                                 </header><!-- .entry-header -->
 
                                 <div class="entry-content mt-4">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempus vestibulum mauris quis aliquam. Integer accumsan sodales odio, id tempus ullamcorper</p>
+                                    <p>Toll payments made easier</p>
                                 </div><!-- .entry-content -->
 
                                 <footer class="entry-footer d-flex flex-wrap align-items-center mt-5">
@@ -105,17 +105,19 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 col-md-6 col-lg-4 mt-4 mt-lg-0">
-                    <div class="icon-box active">
+                    <div class="icon-box ">
                         <figure class="d-flex justify-content-center">
                             <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/phone-icon.png" alt="">
                          </figure>
 
                         <header class="entry-header">
-                            <h3 class="entry-title">Dolor sit amet</h3>
+                            <h3 class="entry-title">Time Saving</h3>
                         </header>
 
                         <div class="entry-content">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempus vestib ulum mauris quis aliquam. </p>
+                            <p>
+                            No more long queues at toll plazas
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -127,11 +129,11 @@
                         </figure>
 
                         <header class="entry-header">
-                            <h3 class="entry-title">Dolor sit amet</h3>
+                            <h3 class="entry-title">No need to carry Cash</h3>
                         </header>
 
                         <div class="entry-content">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempus vestib ulum mauris quis aliquam. </p>
+                            <p>No need to carry Cash for Toll charges</p>
                         </div>
                     </div>
                 </div>
@@ -143,11 +145,11 @@
 						</figure>
 
                         <header class="entry-header">
-                            <h3 class="entry-title">Dolor sit amet</h3>
+                            <h3 class="entry-title">Easy recharge options</h3>
                         </header>
 
                         <div class="entry-content">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempus vestib ulum mauris quis aliquam. </p>
+                        <p>Cash, Cheque, Credit Card/ Debit Card / NEFT/ RTGS or Net banking</p>
                         </div>
                     </div>
                 </div>
@@ -162,11 +164,11 @@
                 <div class="col-12 col-lg-6 order-2 order-lg-1">
                     <div class="welcome-content">
                         <header class="entry-header">
-                            <h2 class="entry-title">Welcome to our site</h2>
+                            <h2 class="entry-title">What is FASTag?</h2>
                         </header><!-- .entry-header -->
 
                         <div class="entry-content mt-5">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempus vestib ulum mauris quis aliquam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempus vestibulum mauris quis aliquam. Integer accumsan sodales odio, id tempus velit ullamcorper id. Quisque at erat eu libero consequat tempus. Quisque molestie convallis tempus. Ut semper purus metus, a euismod sapien sodales ac. Duis viverra eleifend fermentum.</p>
+                            <p>FASTag is a simple to use, reloadable tag which enables automatic deduction of toll charges and lets you pass through the toll plaza without stopping for the cash transaction. FASTag is linked to a prepaid account from which the applicable toll amount is deducted. The tag employs Radio-frequency Identification (RFID) technology and is affixed on the vehicle’s windscreen after the tag account is active. FASTag is a perfect solution for a hassle free trip on national highways. FASTag is presently operational at 407 toll plazas across national and state highways. More toll plazas will be brought under the FASTag program in the future.</p>
                         </div><!-- .entry-content -->
 
                         <div class="entry-footer mt-5">
@@ -188,9 +190,9 @@
             <div class="row align-items-end">
                 <div class="coL-12">
                     <div class="section-heading">
-                        <h2 class="entry-title">Heading	</h2>
+                        <h2 class="entry-title">Benefits of #FASTag</h2>
 
-                        <p>Dolor sit amet, consectetur adipiscing elit. Mauris tempus vestib ulum mauris quis aliquam. Lorem ipsum dolor sit amet.</p>
+                        <p></p>
                     </div><!-- .section-heading -->
                 </div><!-- .col -->
 
@@ -201,7 +203,9 @@
                                 <div class="d-flex justify-content-center align-items-center">
                                     <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/phone-icon.png" alt="">
                                 </div>
-                                <h3 class="entry-title">Dolor sit amet</h3><!-- entry-title -->
+                                <h3 class="entry-title"> <p>No more long queues at toll plazas</p>
+                        <p> No need to carry Cash for Toll charges</p>
+                        <p> SMS alerts for all toll transactions - balance, deduction, recharge, etc</p></h3><!-- entry-title -->
                             </div><!-- counter-box -->
                         </div><!-- .col -->
 
@@ -210,7 +214,10 @@
                                 <div class="d-flex justify-content-center align-items-center">
                                     <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/car-icon.png" alt="">
                                 </div>
-                                <h3 class="entry-title">Dolor sit amet</h3><!-- entry-title -->
+                                <h3 class="entry-title">
+                                <p>Easy account recharge options - Cash, Cheque, Credit Card/ Debit Card / NEFT/ RTGS or Net banking</p>
+                                <p>Ease of payment - FASTag removes the manual cash transactions at toll and thus saves time</p>
+                                </h3><!-- entry-title -->
                             </div><!-- counter-box -->
                         </div><!-- .col -->
 
@@ -219,7 +226,10 @@
                                 <div class="d-flex justify-content-center align-items-center">
                                     <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/toll-icon.png" alt="">
                                 </div>
-                                <h3 class="entry-title">Dolor sit amet</h3><!-- entry-title -->
+                                <h3 class="entry-title">
+                                <p> Cash-back offer: You can avail a cashback of 2.5% on all Toll payments using FASTag</p>
+                                
+                                </h3><!-- entry-title -->
                             </div><!-- counter-box -->
                         </div><!-- .col -->
                     </div><!-- .milestones -->

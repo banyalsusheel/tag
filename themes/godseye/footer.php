@@ -16,8 +16,8 @@
 
 	</div><!-- #content -->
 		<footer class="site-footer">
-			<div class="footer-widgetssss">
-				<div class="containersss">
+			<div class="footer-widgets">
+				<div class="container">
 					<div class="row">
 						<div class="col-12">
 							<div class="foot-contact">
