@@ -19,9 +19,14 @@
 			<div class="footer-widgets">
 				<div class="container">
 					<div class="row">
-						<div class="col-12">
+						<div class="col-6">
 							<div class="foot-contact">
 								<?php get_template_part('template-parts/footer/footer', 'widgets');?>
+							</div><!-- .foot-contact -->
+						</div><!-- .col -->
+						<div class="col-6">
+							<div class="foot-contact">
+								<?php do_shortcode('[custom-twitter-feeds]');?>
 							</div><!-- .foot-contact -->
 						</div><!-- .col -->
 					</div><!-- .row -->
