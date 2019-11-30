@@ -15,7 +15,7 @@
 ;?> 
 
 	</div><!-- #content -->
-		<footer class="site-footer">
+		<footer class="site-footer" style="    float: left;    width: 100%;">
 			<div class="footer-widgets">
 				<div class="container">
 					<div class="row">
@@ -29,7 +29,8 @@
 						<?php get_template_part('template-parts/footer/site', 'info');?>
 					</div>
 				</div><!-- .container -->
-			</div><!-- .footer-widgets -->
+			</div> 
+			<!-- .footer-widgets -->
 
 		</footer><!-- .site-footer -->
 	</div><!-- .site-content-contain -->
