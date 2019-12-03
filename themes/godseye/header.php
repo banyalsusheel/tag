@@ -58,8 +58,24 @@
                            <a class="d-block" href="<?php echo esc_url(home_url('/')); ?>" rel="home"><img class="d-block" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/logo-god.png" alt="logo" width="100" height="97"></a>
                         </div><!-- .site-branding -->
 
+						<?php if ( is_active_sidebar( 'sidebar-3' ) ) {?>
+						<div class="widget-column header-widget">
+							<?php dynamic_sidebar( 'header-widget' ); ?>
+						</div>
+					<?php } ?>								
+
 						<?php if (has_nav_menu('top')): ?>
 							<nav class="site-navigation d-flex justify-content-end align-items-center">
+								<!-- NEWS START -->
+								<?php $news = new WP_Query( array('post_type' => 'news','posts_per_page' => 1));
+								while ( $news->have_posts() ) : $news->the_post(); ?>
+									<marquee  >
+										<div class="blink">								
+											<a target="popup" onclick="window.open('<?php echo get_the_excerpt(); ?>','popup','width=600,height=600'); return false;"><?php get_the_title(); ?><?php echo get_the_title(); ?></a>
+										</div>
+									</marquee>
+								<?php endwhile; wp_reset_query(); ?>
+								<!-- NEWS END -->
 								<?php $defaults = array('container' => 'ul', 'menu_class' => 'd-flex flex-column flex-lg-row justify-content-lg-end align-content-center', 'menu_id' => 'top-menu', 'theme_location' => 'top'); 
 								wp_nav_menu($defaults);?>
 								<a href="<?php echo get_permalink(10); ?>" class="btn gradient-bg justify-content-lg-end btn-hide" title="Buy Fastag">Buy Fastag</a>

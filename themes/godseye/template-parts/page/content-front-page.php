@@ -100,6 +100,32 @@
         </div>
     </div><!-- .hero-slider -->
 
+    <div class="home-page-welcome">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-6 order-2 order-lg-1">
+                    <div class="welcome-content">
+                        <header class="entry-header">
+                            <h2 class="entry-title">What is FASTag?</h2>
+                        </header><!-- .entry-header -->
+
+                        <div class="entry-content mt-5">
+                            <p>FASTag is a simple to use, reloadable tag which enables automatic deduction of toll charges and lets you pass through the toll plaza without stopping for the cash transaction. FASTag is linked to a prepaid account from which the applicable toll amount is deducted. The tag employs Radio-frequency Identification (RFID) technology and is affixed on the vehicle’s windscreen after the tag account is active. FASTag is a perfect solution for a hassle free trip on national highways. FASTag is presently operational at 407 toll plazas across national and state highways. More toll plazas will be brought under the FASTag program in the future.</p>
+                        </div><!-- .entry-content -->
+
+                        <div class="entry-footer mt-5">
+                            <a href="<?php echo get_permalink( 10 )?>" class="btn gradient-bg mr-2">Buy Fastag</a>
+                        </div><!-- .entry-footer -->
+                    </div><!-- .welcome-content -->
+                </div><!-- .col -->
+
+                <div class="col-12 col-lg-6 mt-4 order-1 order-lg-2">
+                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/welcome.jpg" alt="welcome">
+                </div><!-- .col -->
+            </div><!-- .row -->
+        </div><!-- .container -->
+    </div><!-- .home-page-icon-boxes -->
+
 
 	<div class="home-page-icon-boxes">
         <div class="container">
@@ -157,32 +183,6 @@
         </div><!-- .container -->
     </div><!-- .home-page-icon-boxes -->
 
-
-    <div class="home-page-welcome">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-lg-6 order-2 order-lg-1">
-                    <div class="welcome-content">
-                        <header class="entry-header">
-                            <h2 class="entry-title">What is FASTag?</h2>
-                        </header><!-- .entry-header -->
-
-                        <div class="entry-content mt-5">
-                            <p>FASTag is a simple to use, reloadable tag which enables automatic deduction of toll charges and lets you pass through the toll plaza without stopping for the cash transaction. FASTag is linked to a prepaid account from which the applicable toll amount is deducted. The tag employs Radio-frequency Identification (RFID) technology and is affixed on the vehicle’s windscreen after the tag account is active. FASTag is a perfect solution for a hassle free trip on national highways. FASTag is presently operational at 407 toll plazas across national and state highways. More toll plazas will be brought under the FASTag program in the future.</p>
-                        </div><!-- .entry-content -->
-
-                        <div class="entry-footer mt-5">
-                            <a href="<?php echo get_permalink( 10 )?>" class="btn gradient-bg mr-2">Buy Fastag</a>
-                        </div><!-- .entry-footer -->
-                    </div><!-- .welcome-content -->
-                </div><!-- .col -->
-
-                <div class="col-12 col-lg-6 mt-4 order-1 order-lg-2">
-                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/welcome.jpg" alt="welcome">
-                </div><!-- .col -->
-            </div><!-- .row -->
-        </div><!-- .container -->
-    </div><!-- .home-page-icon-boxes -->
 
 
     <div class="home-page-limestone">

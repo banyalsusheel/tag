@@ -26,4 +26,14 @@
             prevEl: '.swiper-button-prev'
         }
     });
+
+      // contact form redirection for thankyou page
+    var wpcf7Elm = document.querySelector( '.wpcf7' );
+    
+
+    if(wpcf7Elm){
+        wpcf7Elm.addEventListener( 'wpcf7mailsent', function( event ) {
+        window.location = "/thank-you?m=true"
+    }, false );
+    }
 })(jQuery);

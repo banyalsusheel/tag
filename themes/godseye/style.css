@@ -612,6 +612,94 @@ form.wpcf7-form label, form.wpcf7-form input,form.wpcf7-form textarea, form.wpcf
 .swiper-slide .container {
     margin-left: 100px;
 }
+#ctf .ctf-header-text {
+    color: #929191;
+}
+
+
+/* @group Blink */
+.blink {
+    width: 100%;
+    cursor: pointer;
+    font-weight: bold;
+    color:#ff3600;
+	/* -webkit-animation: blink .75s linear infinite;
+	-moz-animation: blink .75s linear infinite;
+	-ms-animation: blink .75s linear infinite;
+	-o-animation: blink .75s linear infinite;
+	 animation: blink .75s linear infinite; */
+}
+@-webkit-keyframes blink {
+	0% { opacity: 1; }
+	50% { opacity: 1; }
+	50.01% { opacity: 0; }
+	100% { opacity: 0; }
+}
+@-moz-keyframes blink {
+	0% { opacity: 1; }
+	50% { opacity: 1; }
+	50.01% { opacity: 0; }
+	100% { opacity: 0; }
+}
+@-ms-keyframes blink {
+	0% { opacity: 1; }
+	50% { opacity: 1; }
+	50.01% { opacity: 0; }
+	100% { opacity: 0; }
+}
+@-o-keyframes blink {
+	0% { opacity: 1; }
+	50% { opacity: 1; }
+	50.01% { opacity: 0; }
+	100% { opacity: 0; }
+}
+@keyframes blink {
+	0% { opacity: 1; }
+	50% { opacity: 1; }
+	50.01% { opacity: 0; }
+	100% { opacity: 0; }
+}
+/* @end */
+/* p.woocommerce-invalid-required-field */
+.woocommerce-checkout p.woocommerce-invalid-required-field span.error {
+    color: #e2401c;
+    display: block !important;
+    /* font-weight: bold; */
+ }
+ .woocommerce-NoticeGroup-checkout{
+    display: none !important;
+ }
+ /* .screen-reader-text{
+    position: relative !important;
+    overflow: inherit !important;
+ } */
+
+
+@media (min-width: 768px){
+    #customer_details{
+        width: 60%;
+        float: left;
+    }
+    #order_review_heading{
+        width: 30%;
+        float: left;
+    }
+    #order_review{
+        width: 40%;
+        float: left;
+        padding-right: 50px;
+    }
+    .woocommerce table.shop_table td{
+        width: 50%;
+    }
+    .woocommerce .col2-set .col-1, .woocommerce-page .col2-set .col-1,
+    .woocommerce .col2-set .col-2, .woocommerce-page .col2-set .col-2{
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+
 @media screen and (min-width: 992px){
     .site-branding {
         width: auto;
