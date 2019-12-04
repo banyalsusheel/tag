@@ -692,16 +692,36 @@ function special_nav_class($classes, $item)
 }
 
 
+/**
+ * First clear the cart of all products
+ */
+function clear_cart_before_adding( $cart_item_data ) {
+	global $woocommerce;
+	$woocommerce->cart->empty_cart();  
+	return true;
+  }
+  add_filter( 'woocommerce_add_to_cart_validation', 'clear_cart_before_adding' );
+  
+  /**
+  *   Redirect to checkout after adding to cart
+  */
+//   function themeprefix_add_to_cart_redirect() {
+// 	global $woocommerce;
+// 	$checkout_url = $woocommerce->cart->get_checkout_url();
+// 	return $checkout_url;
+//   }
+//   add_filter('add_to_cart_redirect', 'themeprefix_add_to_cart_redirect');
 
 
 
-function bbloomer_redirect_checkout_add_cart($url)
-{
+
+function bbloomer_redirect_checkout_add_cart($url){
 	// $product_id = apply_filters( 'woocommerce_add_to_cart_product_id', absint( $_REQUEST['add-to-cart'] ) );
 	// if ( in_array( $product_id, array( 10) ) ) {
 	// 	$url = WC()->cart->get_checkout_url();
 	// }
 	$url = get_permalink(get_option('woocommerce_checkout_page_id'));
+	echo $url;
 	return $url;
 }
 
@@ -709,30 +729,29 @@ add_filter('woocommerce_add_to_cart_redirect', 'bbloomer_redirect_checkout_add_c
 
 add_filter('woocommerce_product_single_add_to_cart_text', 'woo_custom_cart_button_text');
 
-function woo_custom_cart_button_text()
-{
+function woo_custom_cart_button_text(){
 	return __('Buy Now', 'woocommerce');
 }
 
 
 
 // // Custom validation for Billing Phone checkout field
-// add_action("woocommerce_checkout_process", "custom_validate_billing_phone");
-// function custom_validate_billing_phone(){
-// 	// $is_correct = preg_match('/^[0-9]{10,12}$/', $_POST['billing_phone']);
-// 	$is_correct = preg_match('/^(?:(?:\+|0{0,2})91(\s*[\-]\s*)?|[0]?)?[789]\d{9}$/', $_POST['billing_phone']);
-// 	if ($_POST['billing_phone'] && !$is_correct) {
-// 		wc_add_notice(__('Please enter valid phone number.'), 'error');
-// 	}
-
-// }
+add_action("woocommerce_checkout_process", "custom_validate_billing_phone");
+function custom_validate_billing_phone(){
+	// $is_correct = preg_match('/^[0-9]{10,10}$/', $_POST['billing_phone']);
+	$is_correct = preg_match('/^(?:(?:\+|0{0,2})91(\s*[\-]\s*)?|[0]?)?[789]\d{9}$/', $_POST['billing_phone']);
+	if ($_POST['billing_phone'] && !$is_correct) {
+		wc_add_notice(__('Please enter valid phone number.'), 'error');
+	}
+	$is_correct = preg_match('/^[a-zA-Z0-9]{9,11}$/', $_POST['additional_wooccm1']);
+	if ($_POST['additional_wooccm1'] && !$is_correct) {
+		wc_add_notice(__('Please enter valid Vehicle Registration number.'), 'error');
+	}
+}
 
 add_filter( 'woocommerce_form_field', 'checkout_fields_in_label_error', 10, 4 );
 
 function checkout_fields_in_label_error( $field, $key, $args, $value ) {
-	// echo $args['label'];
-	//billing_first_name
-	// echo "<pre>";print_r($value);echo "</pre>";
    if ( strpos( $field, '</span>' ) !== false && $args['required'] ) {
       $error = '<span class="error" style="display:none">';
       $error .= sprintf( __( '%s is a required field.', 'woocommerce' ), $args['label'] ? $args['label'] : $args['placeholder'] );
@@ -752,8 +771,7 @@ add_action('init', 'register_footer_menus');
 
 
 function wpb_widgets_init() {
- 
-    register_sidebar( array(
+     register_sidebar( array(
         'name'          => 'Header Widget Area',
         'id'            => 'header-widget',
         'before_widget' => '<div class="chw-widget">',
@@ -761,6 +779,19 @@ function wpb_widgets_init() {
         'before_title'  => '<h2 class="chw-title">',
         'after_title'   => '</h2>',
     ) );
- 
 }
 add_action( 'widgets_init', 'wpb_widgets_init' );
+
+
+add_action( 'woocommerce_single_product_summary', 'bbloomer_show_return_policy', 20 );
+ 
+function bbloomer_show_return_policy() {
+?>
+	<div class="Contact-for-more">
+		If you want to buy more than one Fastag then call to these numbers 
+        <span><a href="tel://+919418062001"><i class="fa fa-phone"></i>+91-9418062001</a>
+        <a href="tel://+917018801034"><i class="fa fa-phone"></i>+91-7018801034</a></span>
+         or Can write to us <a class="d-block" href="<?php echo esc_url(home_url('/contact')); ?>" >Contact us</a>
+	</div>
+	<?php
+}
