@@ -38,9 +38,6 @@
     }
 
     var checkout_form = $('form.checkout');
-    $("#billing_first_name").change(function(){
-        alert()
-    })
     checkout_form.on('checkout_place_order', function () {
         
         // $("#place_order").validate({
