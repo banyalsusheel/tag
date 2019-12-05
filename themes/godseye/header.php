@@ -39,7 +39,7 @@
 	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/font-awesome.min.css">
 	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/swiper.min.css">
-	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/style.css">
+	<!-- <link rel="stylesheet" href="<?php //echo get_stylesheet_directory_uri(); ?>/style.css"> -->
 
 	<?php wp_head();?>
 </head>
@@ -52,6 +52,27 @@
 	<header class="site-header">
         <div class="nav-bar">
             <div class="container">
+				<div class="row">
+					<div class="col-12 d-flex flex-wrap justify-content-between align-items-center">
+					<!-- NEWS START -->
+								<?php $news = new WP_Query( array('post_type' => 'news','posts_per_page' => 1));
+								while ( $news->have_posts() ) : $news->the_post(); ?>
+									<marquee class="site-branding d-flex align-items-center" style="width:calc(100% - 250px);" >
+										<div class="blink">								
+											<a target="popup" onclick="window.open('<?php echo get_the_excerpt(); ?>','popup','width=600,height=600'); return false;"><?php get_the_title(); ?><?php echo get_the_title(); ?></a>
+										</div>
+									</marquee>
+								<?php endwhile; wp_reset_query(); ?>
+								<!-- NEWS END -->
+								
+								<?php if ( is_active_sidebar( 'sidebar-3' ) ) {?>
+								
+						<div class="widget-column header-widget d-flex justify-content-end align-items-center">
+							<?php dynamic_sidebar( 'header-widget' ); ?>
+						</div>
+					<?php } ?>	
+								</div>
+				</div>
                 <div class="row">
                     <div class="col-12 d-flex flex-wrap justify-content-between align-items-center">
                         <div class="site-branding d-flex align-items-center">
@@ -79,27 +100,7 @@
                         </div><!-- .hamburger-menu -->
                     </div><!-- .col -->
                 </div><!-- .row -->
-				<div class="row">
-					<div class="col-12 d-flex flex-wrap justify-content-between align-items-center">
-					<!-- NEWS START -->
-								<?php $news = new WP_Query( array('post_type' => 'news','posts_per_page' => 1));
-								while ( $news->have_posts() ) : $news->the_post(); ?>
-									<marquee class="site-branding d-flex align-items-center" >
-										<div class="blink">								
-											<a target="popup" onclick="window.open('<?php echo get_the_excerpt(); ?>','popup','width=600,height=600'); return false;"><?php get_the_title(); ?><?php echo get_the_title(); ?></a>
-										</div>
-									</marquee>
-								<?php endwhile; wp_reset_query(); ?>
-								<!-- NEWS END -->
-								
-								<?php if ( is_active_sidebar( 'sidebar-3' ) ) {?>
-								
-						<div class="widget-column header-widget d-flex justify-content-end align-items-center">
-							<?php dynamic_sidebar( 'header-widget' ); ?>
-						</div>
-					<?php } ?>	
-								</div>
-				</div>
+				
             </div><!-- .container -->
         </div><!-- .nav-bar -->
 	</header><!-- .site-header -->

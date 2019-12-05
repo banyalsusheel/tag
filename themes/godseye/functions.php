@@ -743,22 +743,28 @@ function custom_validate_billing_phone(){
 	if ($_POST['billing_phone'] && !$is_correct) {
 		wc_add_notice(__('Please enter valid phone number.'), 'error');
 	}
-	$is_correct = preg_match('/^[a-zA-Z0-9]{9,11}$/', $_POST['additional_wooccm1']);
+	$is_correct = preg_match('/^(?=.*?\d)(?=.*?[a-zA-Z])[a-zA-Z\d]{9,11}+$/', $_POST['additional_wooccm1']);
 	if ($_POST['additional_wooccm1'] && !$is_correct) {
 		wc_add_notice(__('Please enter valid Vehicle Registration number.'), 'error');
+	}
+	$is_correct = preg_match('/^(?=.*?\d)(?=.*?[a-zA-Z])[a-zA-Z\d]+$/', $_POST['additional_wooccm5']);
+	if ($_POST['additional_wooccm5'] && !$is_correct) {
+		wc_add_notice(__('Please enter valid Chassis Number.'), 'error');
 	}
 }
 
 add_filter( 'woocommerce_form_field', 'checkout_fields_in_label_error', 10, 4 );
 
 function checkout_fields_in_label_error( $field, $key, $args, $value ) {
+
    if ( strpos( $field, '</span>' ) !== false && $args['required'] ) {
       $error = '<span class="error" style="display:none">';
       $error .= sprintf( __( '%s is a required field.', 'woocommerce' ), $args['label'] ? $args['label'] : $args['placeholder'] );
-      $error .= '</span>';
-      $field = substr_replace( $field, $error, strpos( $field, '</span>' ), 0);
+	  $error .= '</span>';
+	  $field = substr_replace( $field, $error, strpos( $field, '</span>' ), 0);
    }
-   return $field;
+	  return $field;
+
 }
 function register_footer_menus() {
     register_nav_menus(
@@ -788,10 +794,8 @@ add_action( 'woocommerce_single_product_summary', 'bbloomer_show_return_policy',
 function bbloomer_show_return_policy() {
 ?>
 	<div class="Contact-for-more">
-		If you want to buy more than one Fastag then call to these numbers 
-        <span><a href="tel://+919418062001"><i class="fa fa-phone"></i>+91-9418062001</a>
-        <a href="tel://+917018801034"><i class="fa fa-phone"></i>+91-7018801034</a></span>
-         or Can write to us <a class="d-block" href="<?php echo esc_url(home_url('/contact')); ?>" >Contact us</a>
+	For more than one FASTags CALL US at <span><a href="tel://+919418062001"><i class="fa fa-phone"></i>+91-9418062001</a></span>
+	Or write us at <a class="d-block" href="<?php echo esc_url(home_url('/contact')); ?>" >Contact us</a>
 	</div>
 	<?php
 }

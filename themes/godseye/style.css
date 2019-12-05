@@ -492,7 +492,7 @@ a:hover, a:active {
 # Home Milestone
 --------------------------------*/
 .home-page-limestone {
-    padding: 50px 0;
+    padding: 0px 0 50px;
 }
 
 .home-page-limestone .section-heading .entry-title {
@@ -616,19 +616,6 @@ form.wpcf7-form label, form.wpcf7-form input,form.wpcf7-form textarea, form.wpcf
     color: #929191;
 }
 
-
-/* @group Blink */
-.blink {
-    width: 100%;
-    cursor: pointer;
-    font-weight: bold;
-    color:#ff3600;
-	/* -webkit-animation: blink .75s linear infinite;
-	-moz-animation: blink .75s linear infinite;
-	-ms-animation: blink .75s linear infinite;
-	-o-animation: blink .75s linear infinite;
-	 animation: blink .75s linear infinite; */
-}
 @-webkit-keyframes blink {
 	0% { opacity: 1; }
 	50% { opacity: 1; }
@@ -666,18 +653,29 @@ form.wpcf7-form label, form.wpcf7-form input,form.wpcf7-form textarea, form.wpcf
     display: block !important;
     /* font-weight: bold; */
  }
+ span.error > span.error {
+    opacity: 0;
+    margin: -15px 0;
+}
 
- /* .screen-reader-text{
-    position: relative !important;
-    overflow: inherit !important;
- } */
 .header-about ul{margin:0px; padding:0px; list-style:none;}
 .header-about ul li a{margin:0 5px; white-space:nowrap; font-size:14px;}
 .wooccm-additional-fields{padding-right:20px;}
  #additional_wooccm5_field label {width: 100%;}
  span.woocommerce-input-wrapper {width: 100%;}
   span.woocommerce-input-wrapper input{padding:5px 7px;}
-
+  .Contact-for-more span a{display:inline-block;}
+  .wooccm-field.wooccm-field-wooccm0, .wooccm-field.wooccm-field-wooccm3{width:49%; display:inline-block; vertical-align:top;}
+.wooccm-field.wooccm-field-wooccm0,.wooccm-field.wooccm-field-wooccm3,.wooccm-field.wooccm-field-wooccm4 {
+    text-align: center;
+}
+.wooccm-field.wooccm-field-wooccm0  label,.wooccm-field.wooccm-field-wooccm3  label,.wooccm-field.wooccm-field-wooccm4 label {
+    display: table;
+    margin: auto;
+}
+.wooccm-field.wooccm-field-wooccm0  button,.wooccm-field.wooccm-field-wooccm3  button,.wooccm-field.wooccm-field-wooccm4 button {
+    width:auto !important;
+}
 @media (min-width: 768px){
     #customer_details{
         width: 60%;
@@ -702,6 +700,7 @@ form.wpcf7-form label, form.wpcf7-form input,form.wpcf7-form textarea, form.wpcf
 		flex: 100%;
 		max-width: 100%;
     }
+
 }
 
 
@@ -761,7 +760,7 @@ form.wpcf7-form label, form.wpcf7-form input,form.wpcf7-form textarea, form.wpcf
 }
 .btn, .wpcf7-submit {padding: 12px 25px;}
 .hero-content-wrap{height:300px;}
-	
+	.mt-5.mt-lg-0{margin-top:0px !important;}
 
 }
 @media screen and (max-width: 768px){
@@ -772,6 +771,17 @@ form.wpcf7-form label, form.wpcf7-form input,form.wpcf7-form textarea, form.wpcf
 		flex: 100%;
 		max-width: 100%;
     }
+	h3#ship-to-different-address {
+    font-size: 16px;
+}
+h1.entry-title,.woocommerce-billing-fields h3,#order_review_heading {
+    font-size: 25px;
+}
+	.wooccm-field.wooccm-field-wooccm0, .wooccm-field.wooccm-field-wooccm3{width:100%; display:inline-block; vertical-align:top;}
+	.site-branding {
+    width: calc(100% - 24px) !important;}
+	.header-widget{width:100%; text-align:center;}
+	.header-widget div{display:inline-block;}
 }
 @media screen and (max-width: 600px){
 	.site-branding img{width:60px; height:58px;}

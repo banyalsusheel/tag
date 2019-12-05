@@ -67,6 +67,6 @@
     
     $(document.body).on('checkout_error', function () {
         var wooError = $('.woocommerce-error');
-        wooError.delay(5000).fadeOut(160);
+        wooError.delay(5000).fadeOut(1000);
     })
 })(jQuery);
