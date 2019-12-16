@@ -24,14 +24,14 @@
 								<?php get_template_part('template-parts/footer/footer', 'widgets');?>
 							</div><!-- .foot-contact -->
 						</div><!-- .col -->
-						<div class="col-sm-4">
+						<div class="col-sm-6">
 							<div class="foot-contact">
 							<h2 class="widget-title">Twitter Feed</h2>
 								<?php echo do_shortcode('[custom-twitter-feeds num=2 exclude="retweeter,actions,linkbox,twitterlink" include="author,date,text,avatar"]')?>	
 							</div><!-- .foot-contact -->
 						</div><!-- .col -->
 
-						<div class="col-sm-4">
+						<div class="col-sm-2">
 							<div class="foot-contact">
 							<h2 class="widget-title">Important Links</h2>
 								
@@ -61,8 +61,23 @@
 <!-- <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/js/jquery.js"></script> -->
 <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/swiper.min.js"></script>
 <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/custom.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/additional-methods.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <?php wp_footer();?>
+<script>
+window.onscroll = function() {myFunction()};
 
+var navbar = document.getElementById("navbar");
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+</script>
 </body>
 </html>

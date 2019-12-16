@@ -752,8 +752,14 @@ function custom_validate_billing_phone(){
 		wc_add_notice(__('Please enter valid Chassis Number.'), 'error');
 	}
 }
-
-add_filter( 'woocommerce_form_field', 'checkout_fields_in_label_error', 10, 4 );
+function defer_parsing_of_js( $url ) {
+    if ( is_user_logged_in() ) return $url; //don't break WP Admin
+    if ( FALSE === strpos( $url, '.js' ) ) return $url;
+    if ( strpos( $url, 'jquery.js' ) ) return $url;
+    return str_replace( ' src', ' defer src', $url );
+}
+add_filter( 'script_loader_tag', 'defer_parsing_of_js', 10 );
+// add_filter( 'woocommerce_form_field', 'checkout_fields_in_label_error', 10, 4 );
 
 function checkout_fields_in_label_error( $field, $key, $args, $value ) {
 
@@ -798,4 +804,12 @@ function bbloomer_show_return_policy() {
 	Or write us at <a class="d-block" href="<?php echo esc_url(home_url('/contact')); ?>" >Contact us</a>
 	</div>
 	<?php
+}
+
+
+
+add_action('wp_enqueue_scripts', 'override_woo_frontend_scripts');
+function override_woo_frontend_scripts() {
+    wp_deregister_script('wc-checkout');
+    wp_enqueue_script('wc-checkout', get_template_directory_uri() . '/woocommerce/js/checkout.js', array('jquery', 'woocommerce', 'wc-country-select', 'wc-address-i18n'), null, true);
 }
