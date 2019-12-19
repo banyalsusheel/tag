@@ -801,7 +801,7 @@ function bbloomer_show_return_policy() {
 ?>
 	<div class="Contact-for-more">
 	For more than one FASTags CALL US at <span><a href="tel://+919418062001"><i class="fa fa-phone"></i>+91-9418062001</a></span>
-	Or write us at <a class="d-block" href="<?php echo esc_url(home_url('/contact')); ?>" >Contact us</a>
+	Or write us at <a class="d-block" href="mailto:info@godsisolutions.com?Subject=Buy more tags" target="_top">info@godsisolutions.com</a>
 	</div>
 	<?php
 }
@@ -813,3 +813,25 @@ function override_woo_frontend_scripts() {
     wp_deregister_script('wc-checkout');
     wp_enqueue_script('wc-checkout', get_template_directory_uri() . '/woocommerce/js/checkout.js', array('jquery', 'woocommerce', 'wc-country-select', 'wc-address-i18n'), null, true);
 }
+
+
+
+
+function display_woocommerce_order_count( $atts, $content = null ) {
+	$args = shortcode_atts( array(
+		'status' => 'completed',
+	), $atts );
+	$statuses    = array_map( 'trim', explode( ',', $args['status'] ) );
+	$order_count = 0;
+	foreach ( $statuses as $status ) {
+		// if we didn't get a wc- prefix, add one
+		if ( 0 !== strpos( $status, 'wc-' ) ) {
+			$status = 'wc-' . $status;
+		}
+		$order_count += wp_count_posts( 'shop_order' )->$status;
+	}
+	ob_start();
+	echo number_format( $order_count );
+	return ob_get_clean();
+}
+add_shortcode( 'wc_order_count', 'display_woocommerce_order_count' );
