@@ -815,3 +815,10 @@ h1.entry-title,.woocommerce-billing-fields h3,#order_review_heading {
 }
 	
 }
+
+
+@media only screen and (max-device-width: 667px) {
+    .woocommerce-input-wrapper .wooccm-file-button.button.alt{
+        width: 100% !important;
+    }
+}
