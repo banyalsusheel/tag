@@ -743,7 +743,7 @@ function custom_validate_billing_phone(){
 	if ($_POST['billing_phone'] && !$is_correct) {
 		wc_add_notice(__('Please enter valid phone number.'), 'error');
 	}
-	$is_correct = preg_match('/^(?=.*?\d)(?=.*?[a-zA-Z])[a-zA-Z\d]{9,11}+$/', $_POST['additional_wooccm1']);
+	$is_correct = preg_match('/^(?=.*?\d)(?=.*?[a-zA-Z])[a-zA-Z\d]{8,11}+$/', $_POST['additional_wooccm1']);
 	if ($_POST['additional_wooccm1'] && !$is_correct) {
 		wc_add_notice(__('Please enter valid Vehicle Registration number.'), 'error');
 	}
@@ -835,3 +835,52 @@ function display_woocommerce_order_count( $atts, $content = null ) {
 	return ob_get_clean();
 }
 add_shortcode( 'wc_order_count', 'display_woocommerce_order_count' );
+
+
+
+
+
+
+
+
+
+
+/*
+function mysite_pending($order_id) {
+	$myfile = fopen("newfile.txt", "w") or die("Unable to open file!");
+	$txt = "John Doe\n";
+	fwrite($myfile, $txt);
+	$txt = "Jane Does\n";
+	fwrite($myfile, $txt.$order_id);
+	fclose($myfile);
+	error_log("$order_id set to PENDING");
+	
+}
+function mysite_failed($order_id) {
+    error_log("$order_id set to FAILED");
+}
+function mysite_hold($order_id) {
+	
+    error_log("$order_id set to ON HOLD");
+}
+function mysite_processing($order_id) {
+    error_log("$order_id set to PROCESSING");
+}
+function mysite_completed($order_id) {
+    error_log("$order_id set to COMPLETED");
+}
+function mysite_refunded($order_id) {
+    error_log("$order_id set to REFUNDED");
+}
+function mysite_cancelled($order_id) {
+    error_log("$order_id set to CANCELLED");
+}
+
+add_action( 'woocommerce_order_status_pending', 'mysite_pending', 10, 1);
+add_action( 'woocommerce_order_status_failed', 'mysite_failed', 10, 1);
+add_action( 'woocommerce_order_status_on-hold', 'mysite_hold', 10, 1);
+add_action( 'woocommerce_order_status_processing', 'mysite_processing', 10, 1);
+add_action( 'woocommerce_order_status_completed', 'mysite_completed', 10, 1);
+add_action( 'woocommerce_order_status_refunded', 'mysite_refunded', 10, 1);
+add_action( 'woocommerce_order_status_cancelled', 'mysite_cancelled', 10, 1);
+*/
